@@ -21,10 +21,10 @@ public final class DateUtil {
 	}
 
 	public static LocalDate toLocalDate(Date date) {
-		return date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+		return date == null ? null : date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 	}
-	
+
 	public static java.sql.Date toDate(LocalDate locDate) {
-    	return java.sql.Date.valueOf(locDate);
-    }
+		return locDate == null ? null : java.sql.Date.valueOf(locDate);
+	}
 }
