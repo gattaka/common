@@ -49,13 +49,6 @@
 			<artifactId>spring-web</artifactId>
 		</dependency>
 
-		<!-- Spring test (verze je dodána z BOM) -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- Spring REST MVC (verze je dodána z BOM) -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -162,28 +155,6 @@
 			<version>2.5</version>
 		</dependency>
 
-		<!-- perf4j -->
-		<dependency>
-			<groupId>org.perf4j</groupId>
-			<artifactId>perf4j</artifactId>
-			<version>0.9.16</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<!-- JUnit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-		</dependency>
-
-		<!-- Logback -->
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-			<version>1.2.3</version>
-		</dependency>
-
 		<!-- Apache Tica pro detekci typů souborů -->
 		<dependency>
 			<groupId>org.apache.tika</groupId>
@@ -196,6 +167,61 @@
 			<groupId>net.engio</groupId>
 			<artifactId>mbassador</artifactId>
 			<version>1.1.9</version>
+		</dependency>
+
+		<!-- Tomcat JDBC -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jdbc</artifactId>
+			<version>8.5.23</version>
+		</dependency>
+
+		<!-- ====================== -->
+		<!-- Performance monitoring -->
+		<!-- ====================== -->
+
+		<!-- perf4j -->
+		<dependency>
+			<groupId>org.perf4j</groupId>
+			<artifactId>perf4j</artifactId>
+			<version>0.9.16</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- ======== -->
+		<!-- Logování -->
+		<!-- ======== -->
+
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+
+		<!-- ===== -->
+		<!-- Testy -->
+		<!-- ===== -->
+
+		<!-- Závislosti nesmí být omezeny jenom na test, protože by je neviděly 
+			potomci, kteří mají tento artifact jako závislost -->
+
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.3.171</version>
+		</dependency>
+
+		<!-- Spring test (verze je dodána z BOM) -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
 		</dependency>
 
 	</dependencies>
