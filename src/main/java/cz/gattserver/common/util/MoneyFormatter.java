@@ -6,8 +6,14 @@ import java.util.Locale;
 
 public class MoneyFormatter {
 
-	private static NumberFormat priceFormat = NumberFormat.getCurrencyInstance(new Locale("cs", "CZ"));
+	private static NumberFormat priceFormat ;
 
+	static {
+		priceFormat = NumberFormat.getCurrencyInstance(new Locale("cs", "CZ"));
+		priceFormat.setMinimumFractionDigits(2);
+	}
+	
+	
 	public static String format(BigDecimal price) {
 		return priceFormat.format(price.doubleValue());
 	}
