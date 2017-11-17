@@ -18,6 +18,7 @@
 		<hibernate-validator.version>5.1.4.Final</hibernate-validator.version>
 		<querydsl.version>4.1.4</querydsl.version>
 		<querydsl-apt.version>1.1.3</querydsl-apt.version>
+		<org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
 	</properties>
 
 	<dependencies>
@@ -33,6 +34,13 @@
 			<groupId>org.bindgen</groupId>
 			<artifactId>bindgen</artifactId>
 			<version>2.23</version>
+		</dependency>
+
+		<!-- Mapstruct -->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>${org.mapstruct.version}</version>
 		</dependency>
 
 		<!-- Spring (verze je dodána z BOM) -->
@@ -252,5 +260,69 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- Generovani querydsl Q objektu. V eclipse zpusobuje chybu "You need 
+					to run build with JDK..." ktera se da odstranit pridanim "-vm C:\Program 
+					Files\Java\jdk1.7.0_79\bin\javaw.exe" do eclipse.ini souboru. Pak je nutne 
+					na projektu udelat Maven -> Update Project... -->
+				<plugin>
+					<groupId>com.mysema.maven</groupId>
+					<artifactId>apt-maven-plugin</artifactId>
+					<version>1.1.2</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>process</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${basedir}/target/generated-sources/querydsl</outputDirectory>
+								<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+								<logOnlyOnError>true</logOnlyOnError>
+							</configuration>
+						</execution>
+					</executions>
+					<!-- Dependencies nutne pro eclipse, aby hned po vytvoreni noveho domenoveho 
+						objektu (anotace @Entity) byl vygenerovan Q objekt. Alternativne lze mimo 
+						eclipse zavolat "mvn generate-source". -->
+					<dependencies>
+						<dependency>
+							<groupId>com.mysema.querydsl</groupId>
+							<artifactId>querydsl-apt</artifactId>
+							<version>${querydsl.version}</version>
+						</dependency>
+						<dependency>
+							<groupId>com.mysema.querydsl</groupId>
+							<artifactId>querydsl-jpa</artifactId>
+							<classifier>apt</classifier>
+							<version>${querydsl.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+
+				<!-- MapStruct a Bindgen -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.6.1</version>
+					<configuration>
+						<source>${maven.compiler.source}</source>
+						<target>${maven.compiler.target}</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+						<generatedSourcesDirectory>${basedir}/target/generated-sources/java</generatedSourcesDirectory>
+						<annotationProcessorPaths>
+							<path>
+								<groupId>org.mapstruct</groupId>
+								<artifactId>mapstruct-processor</artifactId>
+								<version>${mapstruct.version}</version>
+							</path>
+						</annotationProcessorPaths>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 
 </project>
