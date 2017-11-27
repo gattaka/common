@@ -1,7 +1,8 @@
 package cz.gattserver.common.util;
 
 /**
- * Primitivní typy jako (B/b)oolean se nedají předávat do anonymních tříd, protože (většinou) nemůžou být final
+ * Primitivní typy jako (B/b)oolean se nedají předávat do anonymních tříd,
+ * protože (většinou) nemůžou být final
  */
 public final class ReferenceHolder<T> {
 
@@ -16,7 +17,7 @@ public final class ReferenceHolder<T> {
 	}
 
 	public static ReferenceHolder<Boolean> newBooleanHolder() {
-		return new ReferenceHolder<Boolean>();
+		return new ReferenceHolder<>();
 	}
 
 	public static ReferenceHolder<Boolean> newBooleanHolder(Boolean value) {
@@ -26,7 +27,7 @@ public final class ReferenceHolder<T> {
 	}
 
 	public static ReferenceHolder<Integer> newIntegerHolder() {
-		return new ReferenceHolder<Integer>();
+		return new ReferenceHolder<>();
 	}
 
 	public static ReferenceHolder<Integer> newIntegerHolder(Integer value) {

@@ -6,17 +6,17 @@ import org.junit.Test;
 public class CZSuffixFormatterTest {
 
 	@Test
-	public void testSuffix() {
+	public void testFormat() {
 		CZSuffixFormatter formatter = new CZSuffixFormatter("kostka", "kostky", "kostek");
-		assertEquals(formatter.format(null), "-");
-		assertEquals(formatter.format(0), "-");
-		assertEquals(formatter.format(1), "1 kostka");
-		assertEquals(formatter.format(2), "2 kostky");
-		assertEquals(formatter.format(5), "5 kostek");
+		assertEquals("-", formatter.format(null));
+		assertEquals("-", formatter.format(0));
+		assertEquals("1 kostka", formatter.format(1));
+		assertEquals("2 kostky", formatter.format(2));
+		assertEquals("5 kostek", formatter.format(5));
 
 		formatter = new CZSuffixFormatter("kostka", "kostky", "kostek", "nic");
-		assertEquals(formatter.format(null), "nic");
-		assertEquals(formatter.format(0), "nic");
+		assertEquals("nic", formatter.format(null));
+		assertEquals("nic", formatter.format(0));
 	}
 
 }

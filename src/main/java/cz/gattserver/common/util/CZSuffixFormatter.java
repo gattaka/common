@@ -16,7 +16,10 @@ public class CZSuffixFormatter {
 
 	private static final String DEFAULT_NULL_VALUE = "-";
 
-	private String suf1, suf2to4, suf5AndMore, nullValue;
+	private String suf1;
+	private String suf2to4;
+	private String suf5AndMore;
+	private String nullValue;
 
 	/**
 	 * 
