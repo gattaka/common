@@ -25,4 +25,15 @@ public class HumanBytesSizeFormatter {
 		return String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre);
 	}
 
+	/**
+	 * Vytvoří popis velikosti souboru v lidsky čitelných hodnotách (kB, MB ...)
+	 * 
+	 * @param bytes
+	 *            velikost jež se zpracovává
+	 * @return řetězec s popisem velikosti souboru
+	 */
+	public static String format(long bytes) {
+		return HumanBytesSizeFormatter.format(bytes, true);
+	}
+
 }
