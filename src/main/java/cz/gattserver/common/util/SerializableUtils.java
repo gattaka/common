@@ -7,17 +7,20 @@ import java.util.List;
 public class SerializableUtils {
 
 	/**
-	 * Vezme list a zaručí, že bude vrácen jako {@link Serializable}
+	 * Vezme list a zaručí, že bude vrácen jako {@link Serializable}, například
 	 * {@link ArrayList}. Může vrátit jinou instanci, nicméně se stejnými
 	 * referencemi.
 	 * 
 	 * @param list
 	 * @return
 	 */
-	public static <T> ArrayList<T> ensureArrayList(List<T> list) {
-		if (list instanceof ArrayList)
-			return (ArrayList<T>) list;
-		return new ArrayList<>(list);
+	@SuppressWarnings("unchecked")
+	public static <I, T extends Serializable & List<I>> T ensureArrayList(List<I> list) {
+		if (list instanceof Serializable)
+			return (T) list;
+		ArrayList<I> arrayList = new ArrayList<>(list);
+		// Protože nejde 
+		return (T) arrayList;
 	}
 
 }

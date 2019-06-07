@@ -23,9 +23,10 @@ public class CZComparator implements Comparator<String> {
 			+ "< '&' < '¢' < '£' < '¤' < '¥' < '§' < '©' < '®' < '%' < '‰' < '$'"
 			+ "< '=' < '+' < '×' < '*' < '÷' < '~'";
 
-	private RuleBasedCollator comparator = new RuleBasedCollator(rules);
+	private RuleBasedCollator comparator;
 
 	public CZComparator() throws ParseException {
+		comparator = new RuleBasedCollator(rules);
 	}
 
 	public int compare(String s1, String s2) {
