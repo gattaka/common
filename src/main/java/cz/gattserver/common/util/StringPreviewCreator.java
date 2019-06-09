@@ -21,7 +21,7 @@ public class StringPreviewCreator {
 	 */
 	public static String createPreview(String text, int maxLength) {
 		Validate.isTrue(maxLength >= 3);
-		if (text.length() > maxLength && text.length() > 3)
+		if (text.length() > maxLength)
 			return text.substring(0, maxLength - 3) + "...";
 		else
 			return text;

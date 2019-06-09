@@ -1,23 +1,22 @@
 package cz.gattserver.common.util;
 
-import org.apache.commons.lang3.time.DateUtils;
-
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 
-public final class DateUtil {
+public final class DateUtils {
 
-	private DateUtil() {
+	private DateUtils() {
 	}
 
 	public static Date resetTime(Date date) {
-		return DateUtils.truncate(date, Calendar.DATE);
+		return org.apache.commons.lang3.time.DateUtils.truncate(date, Calendar.DATE);
 	}
 
 	public static Date resetTimeToMidnight(Date date) {
-		return DateUtils.addSeconds(DateUtils.addMinutes(DateUtils.addHours(resetTime(date), 23), 59), 59);
+		return org.apache.commons.lang3.time.DateUtils.addSeconds(org.apache.commons.lang3.time.DateUtils
+				.addMinutes(org.apache.commons.lang3.time.DateUtils.addHours(resetTime(date), 23), 59), 59);
 	}
 
 	public static LocalDate toLocalDate(Date date) {
