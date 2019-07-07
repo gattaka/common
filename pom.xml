@@ -19,7 +19,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework.version>4.3.23.RELEASE</org.springframework.version>
-		<org.spring.security.version>4.2.12.RELEASE</org.spring.security.version>
+		<org.spring.security.version>4.2.13.RELEASE</org.spring.security.version>
 		<spring-data-jpa.version>1.11.22.RELEASE</spring-data-jpa.version>
 		<hibernate-validator.version>5.1.4.Final</hibernate-validator.version>
 		<querydsl.version>4.1.4</querydsl.version>
@@ -109,8 +109,8 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.11.Final</version>
-			<!-- SEVERE: Unable to process Jar entry [javassist/util/proxy/SerializedProxy.class] 
-				from Jar javassist-3.20.0-GA.jar!/] for annotations -->
+			<!-- SEVERE: Unable to process Jar entry [javassist/util/proxy/SerializedProxy.class] from Jar javassist-3.20.0-GA.jar!/] 
+				for annotations -->
 			<!-- https://github.com/jboss-javassist/javassist/issues/29 -->
 			<exclusions>
 				<exclusion>
@@ -229,8 +229,7 @@
 
 	</dependencies>
 
-	<!-- http://www.baeldung.com/spring-maven-bom We don’t need to specify the 
-		version attribute when we use the Spring artifacts -->
+	<!-- http://www.baeldung.com/spring-maven-bom We don’t need to specify the version attribute when we use the Spring artifacts -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
