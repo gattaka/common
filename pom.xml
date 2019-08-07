@@ -18,9 +18,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<org.springframework.version>4.3.23.RELEASE</org.springframework.version>
-		<org.spring.security.version>4.2.13.RELEASE</org.spring.security.version>
-		<spring-data-jpa.version>1.11.22.RELEASE</spring-data-jpa.version>
+		<org.springframework.version>5.1.0.RELEASE</org.springframework.version>
+		<org.spring.security.version>5.1.0.RELEASE</org.spring.security.version>
+		<spring-data-jpa.version>2.1.5.RELEASE</spring-data-jpa.version>
 		<hibernate-validator.version>5.1.4.Final</hibernate-validator.version>
 		<querydsl.version>4.1.4</querydsl.version>
 		<org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
