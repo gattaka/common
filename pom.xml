@@ -20,7 +20,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework.version>5.1.6.RELEASE</org.springframework.version>
 		<org.spring.security.version>5.1.6.RELEASE</org.spring.security.version>
-		<spring-data-jpa.version>2.1.9.RELEASE</spring-data-jpa.version>		
+		<spring-data-jpa.version>2.1.9.RELEASE</spring-data-jpa.version>
 		<querydsl.version>4.1.4</querydsl.version>
 		<org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
 	</properties>
@@ -65,12 +65,12 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.9.2</version>
+			<version>2.10.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>2.9.9</version>
+			<version>2.10.0</version>
 		</dependency>
 
 		<!-- Spring AOP (verze je dodána z BOM) -->
@@ -108,8 +108,8 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.2.11.Final</version>
-			<!-- SEVERE: Unable to process Jar entry [javassist/util/proxy/SerializedProxy.class] from Jar javassist-3.20.0-GA.jar!/] 
-				for annotations -->
+			<!-- SEVERE: Unable to process Jar entry [javassist/util/proxy/SerializedProxy.class] 
+				from Jar javassist-3.20.0-GA.jar!/] for annotations -->
 			<!-- https://github.com/jboss-javassist/javassist/issues/29 -->
 			<exclusions>
 				<exclusion>
@@ -228,7 +228,8 @@
 
 	</dependencies>
 
-	<!-- http://www.baeldung.com/spring-maven-bom We don’t need to specify the version attribute when we use the Spring artifacts -->
+	<!-- http://www.baeldung.com/spring-maven-bom We don’t need to specify the 
+		version attribute when we use the Spring artifacts -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
