@@ -1,8 +1,8 @@
 package cz.gattserver.common.util;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class StringPreviewCreatorTest {
 
@@ -20,15 +20,15 @@ public class StringPreviewCreatorTest {
 	public void test_short() {
 		assertEquals("tex", StringPreviewCreator.createPreview("tex", 3));
 	}
-	
+
 	@Test
 	public void test_short2() {
 		assertEquals("...", StringPreviewCreator.createPreview("text", 3));
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void test_tooShort() {
-		assertEquals("text", StringPreviewCreator.createPreview("text", 2));
+		assertThrows(IllegalArgumentException.class, () -> StringPreviewCreator.createPreview("text", 2));
 	}
 
 }
