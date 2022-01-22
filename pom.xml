@@ -22,8 +22,13 @@
 		<org.springframework.version>5.2.6.RELEASE</org.springframework.version>
 		<org.spring.security.version>5.3.3.RELEASE</org.spring.security.version>
 		<spring-data-jpa.version>2.1.9.RELEASE</spring-data-jpa.version>
-		<querydsl.version>4.1.4</querydsl.version>
-		<org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
+		<querydsl.version>5.0.0</querydsl.version>
+		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
+		<validation.api.version>1.1.0.Final</validation.api.version>
+		<jackson.version>2.13.1</jackson.version>
+		<commons.lang3.version>3.12.0</commons.lang3.version>
+		<commons.io.version>2.11.0</commons.io.version>
+		<tika.core.version>1.22</tika.core.version>
 	</properties>
 
 	<dependencies>
@@ -32,7 +37,7 @@
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			<version>1.1.0.Final</version>
+			<version>${validation.api.version}</version>
 		</dependency>
 
 		<!-- Mapstruct -->
@@ -67,17 +72,17 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.12.0</version>
+			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-jsr310</artifactId>
-			<version>2.12.0</version>
+			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>2.12.0</version>
+			<version>${jackson.version}</version>
 		</dependency>
 
 		<!-- Spring AOP (verze je dodána z BOM) -->
@@ -170,19 +175,19 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>3.7</version>
+			<version>${commons.lang3.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.6</version>
+			<version>${commons.io.version}</version>
 		</dependency>
 
 		<!-- Apache Tica pro detekci typů souborů -->
 		<dependency>
 			<groupId>org.apache.tika</groupId>
 			<artifactId>tika-core</artifactId>
-			<version>1.22</version>
+			<version>${tika.core.version}</version>
 		</dependency>
 
 		<!-- eventBus -->
