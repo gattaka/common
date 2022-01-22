@@ -1,17 +1,16 @@
 package cz.gattserver.common.util;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Test;
 import java.text.ParseException;
-
-import org.junit.Test;
 
 public class CZComparatorTest {
 
 	@Test
 	public void testResetTime() throws ParseException {
 		CZComparator comparator = new CZComparator();
-		
+
 		// http://prirucka.ujc.cas.cz/?id=900
 		assertEquals(-1, comparator.compare("Ámos", "Rek"));
 		assertEquals(-1, comparator.compare("Ámos", "Anna"));

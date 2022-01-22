@@ -1,13 +1,13 @@
 package cz.gattserver.common.util;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Calendar;
 import java.util.Date;
 
-import org.junit.Test;
 
 public class DateUtilsTest {
 
