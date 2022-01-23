@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>common</artifactId>
 	<name>Gattserver Common</name>
@@ -18,8 +20,11 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework.version>5.2.6.RELEASE</org.springframework.version>
-		<org.spring.security.version>5.3.10.RELEASE</org.spring.security.version>
-		<spring-data-jpa.version>2.1.9.RELEASE</spring-data-jpa.version>
+		<!-- <org.springframework.version>5.3.14</org.springframework.version> -->
+		<org.spring.security.version>5.3.3.RELEASE</org.spring.security.version>
+		<!-- <org.spring.security.version>5.6.1</org.spring.security.version> -->
+		<spring.data.jpa.version>2.1.9.RELEASE</spring.data.jpa.version>
+		<!-- <spring.data.jpa.version>2.6.1</spring.data.jpa.version> -->
 		<querydsl.version>5.0.0</querydsl.version>
 		<org.mapstruct.version>1.4.2.Final</org.mapstruct.version>
 		<validation.api.version>1.1.0.Final</validation.api.version>
@@ -27,6 +32,7 @@
 		<commons.lang3.version>3.12.0</commons.lang3.version>
 		<commons.io.version>2.11.0</commons.io.version>
 		<tika.core.version>1.22</tika.core.version>
+		<gattserver.common.test.version>1.0.8-SNAPSHOT</gattserver.common.test.version>
 	</properties>
 
 	<dependencies>
@@ -112,7 +118,7 @@
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
-			<version>${spring-data-jpa.version}</version>
+			<version>${spring.data.jpa.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -132,6 +138,19 @@
 			<groupId>org.javassist</groupId>
 			<artifactId>javassist</artifactId>
 			<version>3.18.2-GA</version>
+		</dependency>
+
+		<!-- Query DSL -->
+		<dependency>
+			<groupId>com.querydsl</groupId>
+			<artifactId>querydsl-jpa</artifactId>
+			<version>${querydsl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.querydsl</groupId>
+			<artifactId>querydsl-apt</artifactId>
+			<version>${querydsl.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Spring security -->
@@ -154,19 +173,6 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<version>${org.spring.security.version}</version>
-		</dependency>
-
-		<!-- Query DSL -->
-		<dependency>
-			<groupId>com.querydsl</groupId>
-			<artifactId>querydsl-jpa</artifactId>
-			<version>${querydsl.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.querydsl</groupId>
-			<artifactId>querydsl-apt</artifactId>
-			<version>${querydsl.version}</version>
-			<scope>provided</scope>
 		</dependency>
 
 		<!-- Apache commons -->
@@ -231,7 +237,7 @@
 		<dependency>
 			<groupId>cz.gattserver</groupId>
 			<artifactId>common-test</artifactId>
-			<version>1.0.7</version>
+			<version>${gattserver.common.test.version}</version>
 			<type>pom</type>
 			<scope>test</scope>
 		</dependency>
