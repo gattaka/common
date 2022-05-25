@@ -20,7 +20,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.springframework.version>5.3.14</org.springframework.version>
-		<org.spring.security.version>5.6.1</org.spring.security.version>
+		<org.spring.security.version>5.6.4</org.spring.security.version>
 		<!-- <spring.data.jpa.version>2.1.9.RELEASE</spring.data.jpa.version> -->
 		<spring.data.jpa.version>2.6.1</spring.data.jpa.version>
 		<querydsl.version>5.0.0</querydsl.version>
